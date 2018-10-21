@@ -12,9 +12,7 @@ class CommentsController < ApplicationController
     render :show, status: :created
   end
 
-  def show
-    @comment
-  end
+  def show; end
 
   def update
     render :show if @comment.update(comments_params)

@@ -10,9 +10,7 @@ class PostsController < ApplicationController
     render :show, status: :created
   end
 
-  def show
-    puts @post
-  end
+  def show; end
 
   def update
     render :show if @post.update(post_params)
