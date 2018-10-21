@@ -15,6 +15,16 @@ class CommentsController < ApplicationController
     @comment = @post.comments.find(params[:id])
   end
 
+  def update
+    @comment = @post.comments.find(params[:id])
+    render :show if @comment.update(comments_params)
+  end
+
+  def destroy
+    @comment = @post.comments.find(params[:id])
+    @comment.destroy
+  end
+
   private
 
   def comments_params
