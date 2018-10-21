@@ -15,6 +15,16 @@ class PostsController < ApplicationController
     render :show, status: :created
   end
 
+  def update
+    @post = Post.find(params[:id])
+    render :show if @post.update(post_params)
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+  end
+
   private
 
   def post_params
