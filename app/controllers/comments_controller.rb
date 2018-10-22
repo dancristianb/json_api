@@ -12,13 +12,17 @@ class CommentsController < ApplicationController
     render :show, status: :created
   end
 
-  def show; end
+  def show
+    @comment = @post.comments.find(params[:id])
+  end
 
   def update
+    @comment = @post.comments.find(params[:id])
     render :show if @comment.update(comments_params)
   end
 
   def destroy
+    @comment = @post.comments.find(params[:id])
     @comment.destroy
   end
 
@@ -33,6 +37,6 @@ class CommentsController < ApplicationController
   end
 
   def set_post_comment
-    @comment = @post.comments.find(params[:id]) if @post
+    @comment = @post.comments.find(par)
   end
 end
