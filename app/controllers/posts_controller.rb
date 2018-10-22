@@ -7,6 +7,10 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
+    # not needed as rails seems to handle this automatically
+    # if post_params[:comments_attributes]
+    #   @post.comments.create(post_params[:comments_attributes])
+    # end
     render :show, status: :created
   end
 
