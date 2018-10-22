@@ -27,7 +27,8 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:posts).permit(:title, :description, :active)
+    params.require(:posts).permit(:title, :description, :active,
+                                  comments_attributes: %i[author text])
   end
 
 end
