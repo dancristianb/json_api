@@ -37,6 +37,6 @@ class CommentsController < ApplicationController
   end
 
   def set_post_comment
-    @comment = @post.comments.find(par)
+    @comment = @post.comments.find(params[:id]) if @post
   end
 end
